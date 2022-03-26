@@ -55,8 +55,7 @@ const settings = {
 $.ajax(settings).done(function (response) {
 	
         
-    //console.log(response.Stages[0].Events[0].ECo);
-    //document.getElementById('demo').innerHTML=JSON.stringify((response.Stages[0].Events[0].ECo));
+    
     
     var featureData=response.Stages;
 
@@ -65,30 +64,13 @@ $.ajax(settings).done(function (response) {
     
 
 
-    for(var k in featureData) {
-               // console.log(k, featureData[k].attributes.DTENAME);
-                
-              // getDTNCode1 = featureData[k].Snm;
-              // getDTNCode2 = featureData[k].Cnm;
-             //  getDTNCode3 = featureData[k].ECo;
-               
-               
-               //console.log(JSON.stringify("Teams : "+getDTNCode1+" | Series Name  : "+ getDTNCode2));
-               
-               
-               console.log(JSON.stringify(response.Stages[k].Cnm));
-              //  console.log("result : "+JSON.stringify(getDTNCode3));
-             // console.log(response.Stages[k].Events[0].ECo);
-             
-                // document.getElementById('demo').innerHTML = "\n"+JSON.stringify(getDTNCode);
-              //  $("#demo").append(getDTNCode);      
-                
-             //    $("#selectTeam").append($("<option></option>").val(featureData[k].Snm).html(featureData[k].Snm));      
-
+    for(var k in featureData) 
+    {
+              
              $("#list1").append($("<li class='list-group-item list-group-item-info'>"+"<span class='badge badge-danger'>"+featureData[k].Snm+"</span class='badge badge-primary'> "+"<span>"+response.Stages[k].Events[0].ECo+" </span> "+ "<span class='badge badge-primary'>"+response.Stages[k].Cnm+"</span>"+"</li>"));    
              
              
-            }
+    }
 
 
 
